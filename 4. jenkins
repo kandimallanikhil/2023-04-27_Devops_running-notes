@@ -633,7 +633,8 @@ RBAC	: ROLE BASED ACCESS CONTROL
 To restrict the jenkins Control for the users.
 authentication - who can signin
 authorization - who can work
-
+============================================================================================================================
+PROJECT
 user-1: EXP (rajesh)           user-2:FRESHER (raju)	USER-3: FRESHER
 
 1. USERS: Dashboard -- > Manage Jenkins -- > security -- > Users (crearte 2 users)
