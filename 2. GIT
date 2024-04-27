@@ -258,7 +258,165 @@ git push origin HEAD:master
 git branch -D tmp
 
 Now everything works well.
-
+History of NIkhil Test of GIT :
+=================================== Nkhil Testing ================================================
+ git status
+  222  ll
+  223  git add pora1 pora2
+  224  git status
+  225  git add pora3 pora4
+  226  git status
+  227  git branches
+  228  git branch
+  229  cat master
+  230  touch master
+  231  ll
+  232  git status
+  233  git add master
+  234  ll
+  235  git add masterster
+  236  git status
+  237  git commit -m "initial checkout" master
+  238  git status
+  239  git branch
+  240  git logs
+  241  git log
+  242  git checkout -d helloro
+  243  git checkout -b helloro
+  244  git branche
+  245  git branches
+  246  git branch
+  247  ll
+  248  touch goat{1..4}
+  249  ll
+  250  git add g*
+  251  git status
+  252  git restore --staged pora1 pora2
+  253  git status
+  254  git restore --staged pora3 pora4
+  255  git status
+  256  git checkout master
+  257  git status
+  258  git add pora1 pora2 pora3 pora4
+  259  git status
+  260  git checkout helloro
+  261  git commit -m "second commit" goat1 goat2 goat3 goat4
+  262  git status
+  263  git checkout master
+  264  git commit -m "last commit " pora1 pora2 pora3 pora4
+  265  git status
+  266  git branch
+  267  git merge helloro
+  268  ll
+  269  git checkout helloro
+  270  ll
+  271  git checkout master
+  272  git branch
+  273  git remote add origin https://github.com/kandimallanikhil/Paytm.git
+  274  ls -al
+  275  git push origin master
+  276  git branch
+  277  git push origin master
+  278  git status
+  279  git remote add origin https://github.com/kandimallanikhil/containers.git
+  280  git remote add origin https://github.com/kandimallanikhil/paytm.git
+  281  git push origin master
+  282  clear
+  283  git -version
+  284  git --version
+  285  git branches
+  286  git branch
+  287  git status
+  288  git log
+  289  git push origin
+  290  git log 97091456f226d56ae23c8b36ae7cea2d5b112cfb
+  291  clear
+  292  git log 97091456f226d56ae23c8b36ae7cea2d5b112cfb
+  293  ll
+  294  rm * -f
+  295  ll
+  296  git status
+  297  git restore goat1
+  298  ll
+  299  git restore goat2 goat3 goat4 master pora1 pora2 pora3 pora4
+  300  git logs
+  301  git log
+  302  git status
+  303  git branches
+  304  git branch
+  305  git checkout hellpro
+  306  git checkout helloro
+  307  ll
+  308  git checkout master
+  309  ll
+  310  git checkout master
+  311  git branches
+  312  git branch
+  313  git merge helloro
+  314  git push origin master
+  315  git fetch origin master
+  316  git merge  master
+  317  git fetch origin master:tmp
+  318  git rebase tmp
+  319  git push origin HEAD:master
+  320  git pull origin master
+  321  ll
+  322  git remote add origin https://github.com/kandimallanikhil/jenkins-java-project.git
+  323  git remote add  https://github.com/kandimallanikhil/jenkins-java-project.git
+  324  git pull origin https://github.com/kandimallanikhil/jenkins-java-project.git
+  325  git clone https://github.com/kandimallanikhil/jenkins-java-project.git
+  326  ll
+  327  cd jenkins-java-project/
+  328  ll
+  329  git remote add origin
+  330  git remote add origin https://github.com/kandimallanikhil/maven_Jenkins_test.git
+  331  cd ../..
+  332  cd Roo
+  333  cd root/
+  334  git remote remove origin
+  335  git remote add origin https://github.com/kandimallanikhil/maven_Jenkins_test.git
+  336  git pull origin master
+  337  ll
+  338  git remote add origin https://github.com/kandimallanikhil/maven_Jenkins_test.
+  339  git pull origin main
+  340  git pull origin master
+  341  git pull --rebase origin master
+  342  git pull --ff-only origin master
+  343  git remote add origin https://github.com/kandimallanikhil/maven_Jenkins_test.
+  344  git pull origin https://github.com/kandimallanikhil/jenkins-java-project.git
+  345  git pull origin master
+  346  ll
+  347  git remote add origin https://github.com/kandimallanikhil/HelloWorldMaven_maven.git
+  348  git remote add pass https://github.com/kandimallanikhil/HelloWorldMaven_maven.git
+  349  ll
+  350  git remote add pass https://github.com/kandimallanikhil/HelloWorldMaven_maven.git
+  351  git pull pass master
+  352  git pull --rebase pass master
+  353  git pull --ff-only pass master
+  354  ll
+  355  rm * -f
+  356  ll
+  357  rm -d * -f
+  358  rmd * -f
+  359  rm -r * -f
+  360  ll
+  361  git remove origin pass
+  362  hostory
+  363  history
+  364  git remove origin pass
+  365  git remote remove pass
+  366  git remote remove origin
+  367  git remote add master https://github.com/kandimallanikhil/prac.git
+  368  ll
+  369  git pull origin master
+  370  ll
+  371  git remote remove origin
+  372  git remote add master https://github.com/kandimallanikhil/HelloWorldMaven_maven.git
+  373  git remote remove master
+  374  git remote add master https://github.com/kandimallanikhil/HelloWorldMaven_maven.git
+  375  git pull origin master
+  376  git status
+  377  git pull origin master
 
 HISTORY:
 
