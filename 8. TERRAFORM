@@ -115,7 +115,7 @@ HISTORY:
    39  history
 
 ====================================================================================
-
+31-July-23
 OUTPUTS: It will print the resource outputs 
 
 provider "aws" {
