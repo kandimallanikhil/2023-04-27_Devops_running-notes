@@ -648,3 +648,67 @@ user-1: EXP (rajesh)           user-2:FRESHER (raju)	USER-3: FRESHER
 LIST VIEW: USED TO SEPERATE/FILTER THE JOBS.
 MY VIEW: USED TO SHOW THE JOBS WHICH I HAVE PERMISSIONS.
 BUILD PIPELINE VIEW: To show the process of linked jobs -- > PLUGINS -- > AVAILABLE -- > Build Pipeline -- > INSTALL
+-===============================================================================================================================
+Jenkins & Tomcat Project :
+==================
+Script: to configure Jenkins.
+yum install java-1.8.0-openjdk -y
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+amazon-linux-extras install java-openjdk11 -y
+yum install maven git jenkins -y
+update-alternatives --config java
+systemctl start jenkins.service
+systemctl status jenkins
+-----------------------------------------------------------------------------------------------
+
+Tomcat configuration:
+wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.89/bin/apache-tomcat-9.0.89.tar.gz
+tar -zxvf apache-tomcat-9.0.89.tar.gz
+vi apache-tomcat-9.0.89/webapps/manager/META-INF/context.xml (delete 21 & 22 line)
+vi apache-tomcat-9.0.89/conf/tomcat-users.xml
+| <role rolename="manager-gui"/>                                                     |
+|  <role rolename="manager-script"/>                                                 |
+| <user username="nikhil" password="nikhil123" roles="manager-gui, manager-script"/> |
+
+vi apache-tomcat-9.0.89/conf/server.xml
+sh apache-tomcat-9.0.89/bin/startup.sh
+sh apache-tomcat-9.0.89/bin/shutdown.sh
+
+-------------------------------------------------------------------------------------------------------------------------------
+Jenken Pipeline code :
+
+pipeline {
+    agent any
+   stages {
+        stage('git') {
+            steps {
+                git 'https://github.com/kandimallanikhil/jenkins-java-project.git'
+            }
+        }
+                   stage('build'){
+                steps{
+                   sh 'mvn clean package'
+                }
+            }
+ 
+
+            stage('tomcat') {
+                steps {
+                    deploy adapters: [tomcat9(credentialsId: '4d65be1a-792b-42d7-92cc-0695490b11a9', path: '', url: 'http://16.171.151.168:8081/')], contextPath: 'helllooooooooooo', onFailure: false, war: 'target/*.war'
+                }
+            }
+        }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
