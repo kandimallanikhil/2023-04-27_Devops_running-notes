@@ -113,6 +113,9 @@ Suggestions:
  * edit your node instance group: kops edit ig --name=nikhil.k8s.local nodes-us-east-1a
  * edit your master instance group: kops edit ig --name=nikhil.k8s.local master-us-east-1a
 
+To reflect the changes :  kops update cluster --name=nikhil.k8s.local --yes --admin
+Changes may require instances to restart: kops rolling-update cluster
+
 Finally configure your cluster with: kops update cluster --name nikhil.k8s.local --yes --admin
 
 
