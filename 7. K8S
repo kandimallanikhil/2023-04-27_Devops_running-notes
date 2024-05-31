@@ -122,6 +122,8 @@ Changes may require instances to restart: kops rolling-update cluster
 
 Finally configure your cluster with: kops update cluster --name nikhil.k8s.local --yes --admin
 
+To delete a cluster: kops delete cluster --name=rahams.k8s.local --yes
+
 
 
 
