@@ -1,9 +1,12 @@
 sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
-sudo amazon-linux-extras enable corretto8
-yum install java-1.8.0-amazon-corretto -y
-sudo yum install java-17-amazon-corretto-headless -y
-yum install maven jenkins git -y
+# sudo amazon-linux-extras enable corretto8
+# yum install java-1.8.0-amazon-corretto -y
+sudo apt-get install openjdk-8-jdk
+# sudo yum install java-17-amazon-corretto-headless -y
+apt install openjdk-17-jdk openjdk-17-jre
+# yum install maven jenkins git -y
+sudo apt install maven jenkins git -y
 systemctl start jenkins.service
 systemctl status jenkins
 wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.89/bin/apache-tomcat-9.0.89.tar.gz
