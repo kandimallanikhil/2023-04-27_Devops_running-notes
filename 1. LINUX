@@ -290,6 +290,8 @@ cat file1 -n -- > to print line numbers in a file
 sed '=' file1 -- > to print line numbers in a file
 sed -n '5,13p' file1 -- > to print line 5 to 13
 sed -e '5,13p' file1 -- > to print line 5 to 13 double times
+sed -i '56  a\<role rolename="manager-gui"/>' apache-tomcat-9.0.86/conf/tomcat-users.xml - to past the info present in syntax
+sed -i '21d' apache-tomcat-9.0.86/webapps/manager/META-INF/context.xml - to delete the context in 21 line
 
 NETWORKING:
 ip addr
