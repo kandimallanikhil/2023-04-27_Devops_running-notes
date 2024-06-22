@@ -59,6 +59,9 @@ cd .ssh --- > cat known_hosts
 
 INVENTORY HOST PATTERN:
 
+ansible -i /root/snap/task/inventory all --list-hosts  # If we don't save host server names in inventory we can also use this
+"-i" and execute the command, And it was not mandatory to save the file as inventory
+
 ansible all --list-hosts          # shows all the servers
 ansible all[1] --list-hosts       # shows the 2nd server of all 
 ansible dev --list-hosts          # shows the dev server only
