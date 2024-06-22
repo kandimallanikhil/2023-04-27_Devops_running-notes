@@ -63,6 +63,7 @@ ansible all --list-hosts          # shows all the servers
 ansible all[1] --list-hosts       # shows the 2nd server of all 
 ansible dev --list-hosts          # shows the dev server only
 ansible test --list-hosts         # shows the test server only
+ansible -i inventory kill,help --list-hosts  #  to list the servers present in both hosts.  
 ansible test[1] --list-hosts      # shows the test 2nd server only
 ansible all[1:3] --list-hosts     # shows server 2 to server 4
 ansible all[-1] --list-hosts      # shows the last server
