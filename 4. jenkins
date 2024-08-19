@@ -676,6 +676,34 @@ sh apache-tomcat-9.0.89/bin/startup.sh
 sh apache-tomcat-9.0.89/bin/shutdown.sh
 
 -------------------------------------------------------------------------------------------------------------------------------
+how to deploy ".war " files  s3 directly using Jenkins pipeline.
+
+Step 1: We need to install 2 plugins in Jenkins "AWS configure" & "S3 deployer"
+Step 2: Add these "global variables" - "Amazon S3 profiles" in Jenkins.
+step 3: We need to use the pipeline code generator and generate the code.
+
+pipeline {
+    agent any
+    tools {
+        maven 'maven3'
+    }
+    stages {
+        stage('Build') {
+            steps {
+                git 'https://github.com/kandimallanikhil/jenkins-java-project.git'
+                sh "mvn clean package"
+            }
+        }
+     stage('Copy Files') {
+            steps {
+                s3Upload consoleLogLevel: 'INFO', dontSetBuildResultOnFailure: false, dontWaitForConcurrentBuildCompletion: false, entries: [[bucket: 'hmmmmm121', excludedFile: '', flatten: false, gzipFiles: false, keepForever: false, managedArtifacts: false, noUploadOnFailure: false, selectedRegion: 'ap-south-1', showDirectlyInBrowser: false, sourceFile: 'target/*.war', storageClass: 'STANDARD', uploadFromSlave: false, useServerSideEncryption: false]], pluginFailureResultConstraint: 'FAILURE', profileName: 'testing', userMetadata: []
+            }
+        }
+    }
+}
+========================================================================================================================================================================================
+
+
 Jenken Pipeline code :
 
 pipeline {
