@@ -1,0 +1,81 @@
+To achieve this, you can create a shell script that:
+
+Captures CPU and memory utilization.
+Saves the results to a file.
+Uploads the file to an S3 bucket.
+Deletes files older than 7 days from the S3 bucket.
+Here's how you can do it:
+
+Step 1: Install AWS CLI (if not already installed)
+Ensure that the AWS CLI is installed and configured with the necessary permissions to access the S3 bucket.
+
+bash
+Copy code
+sudo apt-get update
+sudo apt-get install awscli -y
+
+# Configure AWS CLI with your credentials
+aws configure
+Step 2: Write the Shell Script
+bash
+Copy code
+#!/bin/bash
+
+# Variables
+BUCKET_NAME="your-s3-bucket-name"
+DATE=$(date +"%Y-%m-%d")
+FILE_NAME="cpu_mem_util_$DATE.txt"
+FILE_PATH="/tmp/$FILE_NAME"
+
+# Capture CPU and memory utilization
+echo "CPU and Memory Utilization on $DATE" > $FILE_PATH
+echo "==================================" >> $FILE_PATH
+echo "" >> $FILE_PATH
+echo "CPU Usage:" >> $FILE_PATH
+top -b -n1 | grep "Cpu(s)" >> $FILE_PATH
+echo "" >> $FILE_PATH
+echo "Memory Usage:" >> $FILE_PATH
+free -m >> $FILE_PATH
+
+# Upload the file to S3
+aws s3 cp $FILE_PATH s3://$BUCKET_NAME/
+
+# Clean up local file
+rm -f $FILE_PATH
+
+# Delete files older than 7 days from S3
+aws s3 ls s3://$BUCKET_NAME/ | while read -r line; do
+    createDate=$(echo $line | awk {'print $1" "$2'})
+    fileName=$(echo $line | awk {'print $4'})
+    olderThan=$(date -d "$createDate +7 days" +%s)
+    now=$(date +%s)
+    if [ $now -gt $olderThan ]; then
+        if [ "$fileName" != "" ]; then
+            aws s3 rm s3://$BUCKET_NAME/$fileName
+        fi
+    fi
+done
+Step 3: Schedule the Script to Run Daily at 9:00 AM
+To schedule this script to run every day at 9:00 AM, you can use a cron job.
+
+Edit the crontab file:
+
+bash
+Copy code
+crontab -e
+Add the following line to schedule the script:
+
+bash
+Copy code
+0 9 * * * /path/to/your/script.sh
+This will run the script every day at 9:00 AM.
+
+Step 4: Permissions and Execution
+Ensure the script is executable:
+
+bash
+Copy code
+chmod +x /path/to/your/script.sh
+Notes:
+Replace your-s3-bucket-name with the actual name of your S3 bucket.
+Ensure the AWS CLI has the appropriate permissions to read and write to the S3 buck
