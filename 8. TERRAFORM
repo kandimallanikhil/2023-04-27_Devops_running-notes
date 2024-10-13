@@ -649,7 +649,7 @@ resource "aws_security_group" "five" {
 
 
 
-
+===================WITH DYNAMIC BLOCK:
 
 
 provider "aws" {
