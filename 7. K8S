@@ -121,6 +121,18 @@ Suggestions:
  * edit your node instance group: kops edit ig --name=nikhil.k8s.local nodes-us-east-1a
  * edit your master instance group: kops edit ig --name=nikhil.k8s.local master-us-east-1a
 
+# =================  Now to check the update in cluster =====================
+#  kops validate cluster --wait 10m
+# if we find this error then we should run the below command : 
+################### error ##################
+Error: Validation failed: State Store: Required value: Please set the --state flag or export KOPS_STATE_STORE.
+For example, a valid value follows the format s3://<bucket>.
+You can find the supported stores in https://kops.sigs.k8s.io/state.
+##############################################################################
+this will be present in our main sh file :::::::: 
+export KOPS_STATE_STORE=s3://kandimalla.k8s.local
+
+
 To reflect the changes :  kops update cluster --name=nikhil.k8s.local --yes --admin
 Changes may require instances to restart: kops rolling-update cluster
 
