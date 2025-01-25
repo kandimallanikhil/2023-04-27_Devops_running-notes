@@ -292,7 +292,7 @@ STATIC VARIABLE: These variables are declared inside the playbook.
 STOPPING FACTS:
 
 - hosts: all
-  gather_facts: false
+  gather_facts: false  # this will remove the gathering facts while executing .
   vars:
     a: git
     b: maven
