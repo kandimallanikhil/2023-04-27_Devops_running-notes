@@ -162,10 +162,11 @@ HARDWARE:
 
 cat /proc/meminfo	: to show memory information
 lsmem			: to show memory information
+lsmem | grep "Memory block size" > nikhil.log -- to store the O/P in nikhil.log
+------------------------------------------------------------------------------
 cat /proc/cpuinfo	: to show cpu information
 lscpu			: to show cpu information
-cat /etc/os-release	: to print flavoure
-
+cat /etc/os-release	: to print flavor
 
 fdisk -l		: to show the ebs volume info
 lsblk			: to show the ebs volume info
