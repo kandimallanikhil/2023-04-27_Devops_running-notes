@@ -106,8 +106,11 @@ FOLDERS = DIRECTORIES
 mdkir dir1	: to create a folder
 cd dir1		: to go inside the directory
 cd ..		: to go back one directory
+sudo mkdir -p home/nikhil/kand/pass : to create a recurrent directory
+
 rmdir dir1	: to remove a directory
-rm -rf (snap) to remove a snap directory forcefully even if it has data in it.
+rm -rf (snap) to forcefully remove a snap directory  even if it has data.
+
 
 echo "hai raham" > file3
 ===============================================================
