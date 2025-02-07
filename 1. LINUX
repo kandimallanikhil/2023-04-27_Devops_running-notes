@@ -179,6 +179,10 @@ free -m			: to show how much ram is available
 
 yum install lshw -y	: to install the package 
 lshw			: to show the hardware information.
+sudo lshw -short - same as above
+top  : show real-time system resource usage, including CPU, memory, and processes.
+htop : same but  more user-friendly version
+
 ====================================================================================================================
 
 
