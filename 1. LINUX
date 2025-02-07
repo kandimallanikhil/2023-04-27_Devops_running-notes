@@ -152,7 +152,7 @@ ndd	: delete n lines
 nu	: undo n times
 
 gg	: top of file
-shift+g	: bottom of file
+shift+g or G (uppercase)	: bottom of file
 :15	: to go to line 15
 :set number: print lines inside the file
 
