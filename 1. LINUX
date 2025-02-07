@@ -107,6 +107,7 @@ mdkir dir1	: to create a folder
 cd dir1		: to go inside the directory
 cd ..		: to go back one directory
 rmdir dir1	: to remove a directory
+rm -rf (snap) to remove a snap directory forcefully even if it has data in it.
 
 echo "hai raham" > file3
 ===============================================================
