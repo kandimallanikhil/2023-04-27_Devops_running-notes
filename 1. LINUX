@@ -275,6 +275,8 @@ grep IS file1 -i -v	: to avoid the line which is having word is
 cat file1 | grep is	: to search word is on file1
 cat file1 | grep IS -i	: to avoid the case sensitive
 cat file1 | grep IS -iv : to avoid the line which is having word is
+lsmem | grep "Memory block size"  this will work  
+but this wont work lsmem | grep Memory block size because it will taking " memory" "block" "size" as different charecters.
 
 | : is pipe sysmbol -- > to work with pipe we need to have 2 commands
 here 1 st command output will be input of 2 nd command.
