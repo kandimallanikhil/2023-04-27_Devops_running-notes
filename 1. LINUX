@@ -192,7 +192,8 @@ ec2-user: he is the default user.
 root: he is the admin, he will have all permissions.
 superuser: 
 he is a normal user created by root user.
-normal user -- > visudo -- > super user
+normal user -- > visudo -- > super user #  once we create a normal user to grant sudo permision we need to add them in to 
+this group
 
 useradd raham: to create a user
 cat /etc/passwd: to see the users list.
