@@ -139,7 +139,9 @@ Changes may require instances to restart: kops rolling-update cluster
 Finally configure your cluster with: kops update cluster --name nikhil.k8s.local --yes --admin
 
 To delete a cluster: kops delete cluster --name=rahams.k8s.local --yes
-
+============= This command below is used for our local hosted zone in place of (nikhil.k8s.local) This is used when we have our own
+domain hosted in route53.
+aws route53 create-hosted-zone --name dev.example.com --caller-reference <unique-caller-reference>
 
 
 
