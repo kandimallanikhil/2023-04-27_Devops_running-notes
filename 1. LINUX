@@ -318,6 +318,23 @@ sed -e '5,13p' file1 -- > to print line 5 to 13 double times
 sed -i '56  a\<role rolename="manager-gui"/>' apache-tomcat-9.0.86/conf/tomcat-users.xml - to past the info present in syntax
 sed -i '21d' apache-tomcat-9.0.86/webapps/manager/META-INF/context.xml - to delete the context in 21 line
 
+==================================================================================================================
+| Command | Meaning | Example | Explanation |
+|--------|---------|---------|-------------|
+| `a` | Append line after specific line | `sed '2a Grape' file.txt` | Adds `"Grape"` **after line 2** |
+| `s` | Substitute/replace text | `sed '3s/Cherry/Mango/' file.txt` | Replaces `"Cherry"` with `"Mango"` **on line 3 only** |
+| `i` | Insert line before specific line | `sed '4i Fig' file.txt` | Inserts `"Fig"` **before line 4** |
+| `d` | Delete a line | `sed '2d' file.txt` | Deletes **line 2** |
+| `p` | Print a line (used with `-n`) | `sed -n '3p' file.txt` | Prints **only line 3**, nothing else |
+| `y` | Transliterate characters | `sed 'y/AEIOU/aeiou/' file.txt` | Converts all uppercase vowels to lowercase in every line |
+| `w` | Write result to file | `sed '2d; w output.txt' file.txt` | Deletes line 2 and writes result to `output.txt` |
+| `q` | Quit after processing a line | `sed '3q' file.txt` | Stops after processing **line 3** |
+| `=` | Print line numbers | `sed '=' file.txt` | Prints line numbers along with lines |
+| `!` | Negate (apply to non-matching lines) | `sed '/Banana/!d' file.txt` | Deletes all lines **except those matching `"Banana"`** |
+
+=================================================================================================================================
+
+
 NETWORKING:
 ip addr
 ip addr show
