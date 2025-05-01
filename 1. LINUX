@@ -170,9 +170,22 @@ cat /etc/os-release	: to print flavor
 
 fdisk -l		: to show the ebs volume info
 lsblk			: to show the ebs volume info
+O/P of ____ -- lsblk : 
+---------------------------------------------
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda      8:0    0  100G  0 disk 
+├─sda1   8:1    0   96G  0 part /
+├─sda2   8:2    0    1G  0 part [SWAP]
+-----------------------------------------------
 
 df			: to show the mount point
-df -m			: to show the mount point in mb
+df -m			: to show the mount point in MB
+O/P of df : 
+---------------------------------------------------------------
+Filesystem     1K-blocks    Used Available Use% Mounted on
+/dev/sda1       99932068 5602348  89217220   6% /
+-----------------------------------------------------------------
+
 
 free			: to show how much ram is available
 free -m			: to show how much ram is available
