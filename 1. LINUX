@@ -197,6 +197,34 @@ top  : show real-time system resource usage, including CPU, memory, and processe
 htop : same but  more user-friendly version
 
 ====================================================================================================================
+sudo ss -tulnp   ( -t: TCP,-u: UDP,-l: Listening,-n: Show numeric ports/IPs (no DNS resolution),-p to show process names:)
+O/P : 
+Netid State  Recv-Q Send-Q      Local Address:Port Peer Address:Port Process
+udp   UNCONN 0      0              127.0.0.54:53        0.0.0.0:*     users:(("systemd-resolve",pid=328,fd=16))
+udp   UNCONN 0      0           127.0.0.53%lo:53        0.0.0.0:*     users:(("systemd-resolve",pid=328,fd=14))
+--------------------------------------------------------------------------------------
+systemctl list-units --type=service --state=running  ( To know all the running services)
+O/P : 
+ UNIT                                           LOAD   ACTIVE SUB     DESCRIPTION                                           >
+  acpid.service                                  loaded active running ACPI event daemon
+  chrony.service                                 loaded active running chrony, an NTP client/server
+  cron.service                                   loaded active running Regular background program 
+-----------------------------------------------------------------------------------------
+lsof -i -P -n = --- Same as ss -tulnp but shows the pid
+COMMAND    PID            USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+systemd      1            root  103u  IPv6   6482      0t0  TCP *:22 (LISTEN)
+systemd-r  328 systemd-resolve   14u  IPv4   3721      0t0  UDP 127.0.0.53:53
+systemd-r  328 systemd-resolve   15u  IPv4   3722      0t0  TCP 127.0.0.53:53 (LISTEN)
+systemd-r  328 systemd-resolve   16u  IPv4   3723      0t0  UDP 127.0.0.54:53
+systemd-r  328 systemd-resolve   17u  IPv4   3724      0t0  TCP 127.0.0.54:53 (LISTEN)
+----------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
 
 
 USERS: 
